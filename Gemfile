@@ -29,6 +29,9 @@ gem 'font-awesome-sass'
 
 gem 'kaminari'
 
+# flickr api wrapper
+gem 'flickraw'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
