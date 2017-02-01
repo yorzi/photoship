@@ -10,7 +10,8 @@ module Flickr
       results = []
       list.each do |item|
         begin
-          results << flickr.photos.getInfo(photo_id: item.id)
+          # results << flickr.photos.getInfo(photo_id: item.id)
+          results << url(item)
         rescue
           Rails.logger.warning "Item(#{item.id}) is not accessable."
           next
