@@ -3,7 +3,9 @@ module Flickr
     attr_reader :list
 
     def initialize
-      @list = flickr.photos.getRecent(per_page: 10)
+      @list = Rails.cache.fetch "recent_photos", expires_in: 10.minutes do
+        flickr.photos.getRecent(per_page: 20)
+      end
     end
 
     def items

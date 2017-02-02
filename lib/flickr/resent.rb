@@ -3,7 +3,7 @@ module Flickr
     attr_reader :list
 
     def initialize
-      @list = Rails.cache.fetch "recent_photos", expires_in: 10.minutes do
+      @list = cache.fetch "recent_photos", expires_in: 10.minutes do
         flickr.photos.getRecent
       end
     end
