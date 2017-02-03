@@ -15,9 +15,9 @@ class SearchesController < ApplicationController
   def create
     search = Search.new(search_params)
     if search.save
-      redirect_to searches_path(id: search.id)
+      redirect_to root_path(id: search.id)
     else
-      redirect_to searches_path
+      redirect_to root_path
     end
   end
 
