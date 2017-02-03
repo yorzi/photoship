@@ -4,7 +4,7 @@ module Flickr
 
     def initialize
       @list = Rails.cache.fetch "recent_photos", expires_in: 10.minutes do
-        flickr.photos.getRecent(per_page: 20)
+        flickr.photos.getRecent(per_page: 40)
       end
     end
 

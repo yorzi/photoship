@@ -3,7 +3,9 @@ module Flickr
     attr_reader :list
 
     def initialize(options={})
-      @list = flickr.photos.search(options)
+      @list = Rails.cache.fetch "searched_photos_#{options[:keywords]}##{options[:page]}", expires_in: 10.minutes do
+        flickr.photos.search(options)
+      end
     end
 
     def items
