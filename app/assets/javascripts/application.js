@@ -4,4 +4,4 @@
 
 //= require jquery.mosaicflow
 
-//= require home
+//= require searches
