@@ -2,7 +2,7 @@ module Flickr
   class Search < Base
     attr_reader :list
 
-    def initialize(options)
+    def initialize(options={})
       @list = flickr.photos.search(options)
     end
 

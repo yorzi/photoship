@@ -5,10 +5,6 @@
     </div>
   <% end %>
   <div class="clearfix mosaicflow">
-    <% @items.each do |item| %>
-      <div class="mosaicflow__item">
-        <%= image_tag item %>
-      </div>
-    <% end %>
+    <%= render partial: "photo", collection: @items %>
   </div>
 </div>
