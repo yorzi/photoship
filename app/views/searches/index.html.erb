@@ -4,7 +4,7 @@
       <%= f.text_field :keywords, hint: "Input anywords to search..." %>
     </div>
   <% end %>
-  <div class="clearfix" id="photos">
+  <div class="clearfix" id="photos" data-links="<%= "/fetch_more?page=2&id=#{params[:id]}" %>">
     <%= render partial: "photo", collection: @items %>
   </div>
 </div>

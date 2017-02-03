@@ -13,9 +13,12 @@ class SearchesController < ApplicationController
   end
 
   def fetch_more
-    search = Search.find_by(id: params[:id])
-    flickr_search = Flickr::Search.new(text: search.keywords, per_page: 20, page: 2)
-    @items = flickr_search.items
+    if search = Search.find_by(id: params[:id])
+      flickr_search = Flickr::Search.new(text: search.keywords, per_page: 20, page: params[:page])
+      @items = flickr_search.items
+    else
+      render json: { message: 'no more results' }
+    end
   end
 
   def create
