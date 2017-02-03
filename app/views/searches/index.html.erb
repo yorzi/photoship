@@ -4,7 +4,7 @@
       <%= f.text_field :keywords, hint: "Input anywords to search..." %>
     </div>
   <% end %>
-  <div class="clearfix mosaicflow">
+  <div class="clearfix" id="photos">
     <%= render partial: "photo", collection: @items %>
   </div>
 </div>

@@ -2,6 +2,4 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 
-//= require jquery.mosaicflow
-
 //= require searches
