@@ -5,10 +5,10 @@ class SearchesController < ApplicationController
       @search = Search.find_by(id: params[:id])
       @flickr_search = Flickr::Search.new(text: @search.keywords, per_page: 20)
     else
-      @search = Search.new
       @flickr_search = Flickr::Recent.new
     end
 
+    @search = Search.new(keywords: @search.try(:keywords))
     @items = @flickr_search.items
   end
 

@@ -1,6 +1,6 @@
 <div class="row">
   <center>
-    <%= simple_form_for @search do |f| %>
+    <%= simple_form_for @search, url: searches_path do |f| %>
       <%= f.text_field :keywords %>
     <% end %>
   </center>
