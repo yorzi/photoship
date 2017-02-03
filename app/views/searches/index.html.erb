@@ -1,11 +1,9 @@
 <div class="row">
-  <center>
-    <%= simple_form_for @search, url: searches_path do |f| %>
-      <%= f.text_field :keywords %>
-    <% end %>
-  </center>
-</div>
-<div class="row">
+  <%= simple_form_for @search, url: searches_path, html: { class: 'form-horizontal navbar-form' } do |f| %>
+    <div class="form-group">
+      <%= f.text_field :keywords, hint: "Input anywords to search..." %>
+    </div>
+  <% end %>
   <div class="clearfix mosaicflow">
     <% @items.each do |item| %>
       <div class="mosaicflow__item">
