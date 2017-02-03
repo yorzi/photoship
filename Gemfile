@@ -32,6 +32,7 @@ gem 'kaminari'
 # flickr api wrapper
 gem 'flickraw'
 
+gem 'dalli'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
