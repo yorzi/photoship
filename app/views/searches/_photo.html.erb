@@ -1,1 +1,6 @@
-<%= image_tag photo %>
+<figure>
+  <%= link_to image_tag(photo[:url]), photo[:target], target: "_blank" %>
+  <figcaption>
+    <%= photo[:title] %>
+  </figcaption>
+</figure>

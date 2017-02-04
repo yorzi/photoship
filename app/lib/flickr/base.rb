@@ -21,8 +21,12 @@ module Flickr
     #	or
     # https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{o-secret}_o.(jpg|gif|png)
 
-    def url(item)
-      "https://farm#{item.farm}.staticflickr.com/#{item.server}/#{item.id}_#{item.secret}_n.jpg"
+    def info(item)
+      {
+        url: "https://farm#{item.farm}.staticflickr.com/#{item.server}/#{item.id}_#{item.secret}_n.jpg",
+        target: "https://www.flickr.com/photos/#{item.owner}/#{item.id}",
+        title: "#{item.title}"
+      }
     end
 
   end
