@@ -1,2 +1,3 @@
 $("#photos").append("<%= escape_javascript(render partial: 'photo', collection: @items) %>");
 $("#photos").data("links", "/fetch_more?page=<%= params[:page].to_i + 1 %>&id=<%= params[:id] %>");
+$('.loading').hide();
