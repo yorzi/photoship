@@ -21,9 +21,9 @@ class SearchesController < ApplicationController
 
   def find_items
     if @search = Search.find_by(id: params[:id])
-      flickr_search = Flickr::Search.new(text: @search.keywords, per_page: 50, page: params[:page] || 1)
+      flickr_search = Flickr::Search.new(text: @search.keywords, per_page: 100, page: params[:page] || 1)
     else
-      flickr_search = Flickr::Recent.new(per_page: 20, page: params[:page] || 1)
+      flickr_search = Flickr::Recent.new(per_page: 100, page: params[:page] || 1)
     end
     @items = flickr_search.items
   end
